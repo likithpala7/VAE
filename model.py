@@ -26,7 +26,7 @@ class Encoder(nn.Module):
         self.conv1 = nn.Conv2d(input_dim, 64, 3, stride=2, padding=1)
         self.conv2 = nn.Conv2d(64, 128, 3, stride=2, padding=1)
         self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(128*8*8, 128)
+        self.fc1 = nn.Linear(128*64*64, 128)
         self.fc2 = nn.Linear(128, 16)
         self.mean = nn.Linear(16, latent_dim)
         self.logvar = nn.Linear(16, latent_dim)
@@ -47,8 +47,8 @@ class Decoder(nn.Module):
         
         self.fc1 = nn.Linear(latent_dim, 16)
         self.fc2 = nn.Linear(16, 128)
-        self.fc3 = nn.Linear(128, 128*8*8)
-        self.reshape = nn.Unflatten(1, (128, 8, 8))
+        self.fc3 = nn.Linear(128, 128*64*64)
+        self.reshape = nn.Unflatten(1, (128, 64, 64))
         self.conv1 = nn.ConvTranspose2d(128, 64, 3, stride=2, padding=1, output_padding=1)
         self.conv2 = nn.ConvTranspose2d(64, output_dim, 3, stride=2, padding=1, output_padding=1)
 
