@@ -38,11 +38,10 @@ Here are some examples of randomly generated images and reconstructed images:
 ![Reconstructed Image 2](output/reconstructed_image_9.png)
 ![Reconstructed Image 3](output/reconstructed_image_13.png)
 
+## Future Work
+
+As evident from the images in the examples section, VAEs do not perform the best in terms of reconstruction since the features that are hard to learn end up becoming very blurry. This model learned facial features properly - namely eyes, nose, and mouth, but doesn't seem to learn features outside of the face such as hair, ears, or background. A follow-up to this project is to implement a VQ-VAE, which produce sharper images since model learns a discrete representation of the latent space rather than a continuous distribution.
 
 ## Contributing
 
 Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-# Future Work
-
-As evident from the images in the examples section, VAEs do not perform the best in terms of reconstruction since the features that are hard to learn end up becoming very blurry. This model learned facial features properly - namely eyes, nose, and mouth, but doesn't seem to learn features outside of the face such as hair, ears, or background. A follow-up to this project is to implement a VQ-VAE, which produce sharper images since model learns a discrete representation of the latent space rather than a continuous distribution.
