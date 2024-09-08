@@ -1,6 +1,12 @@
 import torch.nn as nn
 from torch.utils.data import Dataset
 
+
+"""
+Dataset class for the VAE
+- ds: the dataset object
+- transform: the transformation to apply to the images
+"""
 class VAEDataset(Dataset):
     def __init__(self, ds, transform=None):
         self.ds = ds['train']
